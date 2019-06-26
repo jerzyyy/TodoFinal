@@ -2,4 +2,4 @@
 
 </app-todo-form>
 
-<app-todo-list [tasks]="todoList"></app-todo-list>
+<app-todo-list [tasks]="todoList" (updateTodo)="updateTodo($event)"></app-todo-list>

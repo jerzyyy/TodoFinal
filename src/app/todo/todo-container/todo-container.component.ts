@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Todo } from '../model/todo';
 
 @Component({
@@ -7,7 +7,7 @@ import { Todo } from '../model/todo';
   styleUrls: ['./todo-container.component.css']
 })
 export class TodoContainerComponent implements OnInit {
-
+  @Input()
   todoList: Array<Todo> = [];
 
   addtask(title: string) {
@@ -17,6 +17,10 @@ export class TodoContainerComponent implements OnInit {
   removetasks() {
     this.todoList = [];
 }
+ updateTodo(todo: Todo) {
+   todo.isDone = !todo.isDone;
+
+ }
 
   constructor() { }
 

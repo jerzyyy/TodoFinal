@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Todo } from '../model/todo';
 
 @Component({
@@ -9,10 +9,15 @@ import { Todo } from '../model/todo';
 export class TodoItemComponent implements OnInit {
 
   @Input()
-  task: Todo ;
-  handleCheckBoxChange() {
-    this.task.isDone = !this.task.isDone;
+  task: Todo;
+
+  @Output()
+  updateTodo: EventEmitter<Todo> = new EventEmitter<Todo>()
+
+  updateTodoEmit() {
+    this.updateTodo.emit(this.task);
   }
+
 
   constructor() { }
 

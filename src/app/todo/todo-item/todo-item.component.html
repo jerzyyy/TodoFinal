@@ -1,3 +1,3 @@
 <div>
-    <p [ngClass]="{'line': isDone}"><input type="checkbox" [checked]="todo.isDone" (change)="handleCheckBoxChange()"> {{task.title | uppercase}} </p>
+    <p [ngClass]="{'line': task.isDone}"><input type="checkbox" [checked]="task.isDone" (change)="updateTodoEmit()"> {{task.title | uppercase}} </p>
 </div>

@@ -1,10 +1,10 @@
-<div *ngIf="tasks.length != 0 ; else message">
+<div *ngIf="tasks.length != 0 ; else msg">
     <ul>
-        <li *ngFor="let task of taches">
-            <app-todo-item [task]="task"></app-todo-item>
+        <li *ngFor="let task of tasks;">
+            <app-todo-item [task]="task" (updateTodo)="uptadeTodoEvent($event)"></app-todo-item>
         </li>
     </ul>
 </div>
-<ng-template #message>
-    <p>Vous n'avez aucun todo</p>
+<ng-template #msg>
+    <p>You don't have any todo</p>
 </ng-template>
